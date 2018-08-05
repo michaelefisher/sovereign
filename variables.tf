@@ -6,7 +6,7 @@ variable "tag" {
 }
 
 variable "image" {
-    default = "debian-95-x64"
+    default = "debian-9-x64"
 }
 
 variable "name" {
@@ -18,7 +18,7 @@ variable "region" {
 }
 
 variable "instance_size" {
-    default = "3gb"
+    default = "4gb"
 }
 
 variable "domain" {
