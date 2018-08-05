@@ -6,7 +6,7 @@ variable "tag" {
 }
 
 variable "image" {
-    default = "debian-9-5-x64"
+    default = "debian-95-x64"
 }
 
 variable "name" {

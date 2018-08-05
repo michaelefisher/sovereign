@@ -2,3 +2,5 @@
 .vagrant/machines
 tests.pyc
 secret
+
+.terraform
