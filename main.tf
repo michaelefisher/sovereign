@@ -22,7 +22,15 @@ resource "digitalocean_droplet" "mail" {
   name   = "${var.name}"
   region = "${var.region}"
   size   = "${var.instance_size}"
+  volume_ids = ["${digitalocean_volume.mail.id}"]
   tags = ["${digitalocean_tag.mail.id}"]
+}
+
+resource "digitalocean_volume" "mail" {
+  region      = "${var.region}"
+  name        = "${var.name}"
+  size        = 100
+  description = "${var.tag}"
 }
 
 resource "digitalocean_floating_ip" "mail" {
