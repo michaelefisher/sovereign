@@ -3,6 +3,7 @@ python: "2.7"
 env:
   global:
     - PATH=$PATH:$TRAVIS_BUILD_DIR
+    - export TF_do_token=$do_token
 cache:
   directories:
     - $HOME/.cache/pip
