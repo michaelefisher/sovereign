@@ -1,22 +1,26 @@
 language: python
-python: "2.7"
+python: '2.7'
 env:
   global:
-    - PATH=$PATH:$TRAVIS_BUILD_DIR
-    - export TF_VAR_do_token=$do_token
+  - PATH=$PATH:$TRAVIS_BUILD_DIR
+  - export TF_VAR_do_token=$do_token
 cache:
   directories:
-    - $HOME/.cache/pip
+  - "$HOME/.cache/pip"
 install:
-  - pip install -r requirements.txt
-  - pip install -r test-requirements.txt
-  - wget https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip
-  - unzip terraform_0.11.1_linux_amd64.zip
+- pip install -r requirements.txt
+- pip install -r test-requirements.txt
+- wget https://releases.hashicorp.com/terraform/0.11.1/terraform_0.11.1_linux_amd64.zip
+- unzip terraform_0.11.1_linux_amd64.zip
 script:
-  - terraform init
-  - terraform get
-  - terraform validate
-  - terraform plan
-  - terraform apply -auto-approve
-  - ansible-playbook --syntax-check -i hosts site.yml
-  - ansible-lint site.yml
+- terraform init
+- terraform get
+- terraform validate
+- terraform plan
+- terraform apply -auto-approve
+- ansible-playbook --syntax-check -i hosts site.yml
+- ansible-lint site.yml
+before_install:
+- openssl aes-256-cbc -K $encrypted_8a28b7baf8f1_key -iv $encrypted_8a28b7baf8f1_iv
+  -in deploy-key.enc -out ./deploy-key -d
+- ssh-add ./deploy-key
