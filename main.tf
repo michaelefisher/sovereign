@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "fisher-terraform"
-    key    = "${var.name}"
+    key    = "mail"
     region = "nyc3"
   }
 }
