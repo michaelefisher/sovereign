@@ -2,7 +2,8 @@ terraform {
   backend "s3" {
     bucket = "fisher-terraform"
     key    = "mail"
-    region = "nyc3"
+    region = "us-east-1"
+    endpoint = "https://nyc3.digitaloceanspaces.com"
   }
 }
 
