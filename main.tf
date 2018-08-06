@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "fisher-terraform"
+    key    = "${var.name}"
+    region = "nyc3"
+  }
+}
+
 # Configure the DigitalOcean Provider
 provider "digitalocean" {
   token = "${var.do_token}"
