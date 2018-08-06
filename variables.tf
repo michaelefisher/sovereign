@@ -27,3 +27,4 @@ variable "domain" {
 
 variable "ssh_keys" {
     default = "[14:bc:c7:8f:63:df:57:e3:ed:c6:e4:91:fc:41:00:23]"
+}
